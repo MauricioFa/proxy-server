@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || "localhost";
 const API_SERVICE_URL = process.env.API_SERVICE_URL;
-const API_KEY = process.env.ENABLED ? process.env.API_KEY : "";
+const API_KEY = process.env.API_KEY;
 
 // Proxy endpoints
 app.use(
