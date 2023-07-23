@@ -1,5 +1,6 @@
 import express from "express";
 import { createProxyMiddleware } from "http-proxy-middleware";
+import cors from "cors";
 import "dotenv/config.js";
 
 // Create Express Server
@@ -10,6 +11,12 @@ const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || "localhost";
 const API_SERVICE_URL = process.env.API_SERVICE_URL;
 const API_KEY = process.env.API_KEY;
+
+app.use(
+  cors({
+    origin: "https://creative-fox-0ee353.netlify.app",
+  })
+);
 
 // Proxy endpoints
 app.use(
